@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.Color;
 
 
 public class Hello2DApp {
@@ -26,15 +27,14 @@ class Hello2DFrame extends JFrame {
     public void paint (Graphics g) {
         super.paint(g);
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setPaint(Color.blue);
         int w = getWidth();
         int h = getHeight();
-        g2d.drawRect(0, 0, w, h);
-        g2d.drawRect(w/3, 0, w/3, h);
-        g2d.fillRect(w/3, 0, w/3, h);
         g2d.setPaint(Color.red);
-        g2d.fillRect(0, 0, w/3, h);
+        g2d.fillRect((w/3)+(w/3), 0, w/3, h);
         g2d.setPaint(Color.white);
+        g2d.fillRect(w/3, 0, w/3, h);
+        g2d.setPaint(Color.blue);
+        g2d.fillRect(0, 0, w/3, h);
         g2d.setFont(new Font("Times New Roman", Font.TYPE1_FONT, 15));
         g2d.drawString("FRANCE.", (w/2) - 30, h/2);
     }
